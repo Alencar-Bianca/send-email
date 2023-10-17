@@ -1,1 +1,1 @@
-<h1>Seja bem-vindo</h1>
+<h1>Seja bem-vindo  {{ $user->name }},</h1>
