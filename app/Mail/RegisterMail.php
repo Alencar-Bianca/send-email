@@ -5,8 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\{Content, Attachment, Envelope};
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
 class RegisterMail extends Mailable
@@ -48,6 +47,9 @@ class RegisterMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        $fileName = public_path('\images\boneco.png');
+        return [
+        Attachment::fromPath($fileName)->as('boneco.png'),
+        ];
     }
 }
