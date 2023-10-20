@@ -26,7 +26,9 @@ class RegisterMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Register Mail',
+            subject: 'IMPORTANTE!',
+            from: 'replay@email.com',
+            replyTo: 'bia@contato.com'
         );
     }
 
