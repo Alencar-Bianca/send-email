@@ -15,6 +15,10 @@ class AuthMailController extends Controller
 
         $user = new User();
         $user->name = 'regina';
+        $user->password = 'regina';
+        $user->email = 'regina02@gmail.com';
+
+        $user->save();
 
         $registerMail = new RegisterMail($user);
 
@@ -22,6 +26,6 @@ class AuthMailController extends Controller
         Mail::to('bianca.re4@hotmail.com')
         ->cc('email@gmail.com')
         ->bcc('email2@gmail.com')
-        ->send($registerMail);
+        ->queue($registerMail);
     }
 }
